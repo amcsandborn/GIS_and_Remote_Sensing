@@ -1,0 +1,25 @@
+ArcMap 10.3
+VBScript
+
+Make custom Labels for counties. 
+
+If the yield is greater than zero, then The Label will be 
+
+County Name
+Yield
+
+If the yield is equal to zero, then The Label will be
+
+County Name
+
+
+Function FindLabel([NAME],[Y_S_Wheat])
+    Dim TheLabel
+    If [Y_S_Wheat] > 0 Then
+        TheLabel = [NAME] &vbnewline& [Y_S_Wheat]
+    End If
+    If [Y_S_Wheat] = 0 Then
+        TheLabel = [NAME]
+    End If
+    FindLabel = TheLabel
+End Function
